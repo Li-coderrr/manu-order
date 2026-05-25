@@ -1,0 +1,275 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 214, 153, 0.9), transparent 30%),
+    linear-gradient(180deg, #fff8ef 0%, #f7efe4 100%);
+  color: #24170d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 20px 16px 112px;
+}
+
+.hero-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 20px;
+  border: 1px solid rgba(123, 66, 25, 0.12);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 243, 224, 0.92));
+  box-shadow: 0 16px 40px rgba(110, 73, 39, 0.08);
+}
+
+.hero-card h1 {
+  margin: 4px 0 10px;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ad5c26;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  margin: 0;
+  color: #6c5846;
+  line-height: 1.6;
+}
+
+.ghost-link {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.content-stack {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.panel-card,
+.toolbar-card,
+.dish-card,
+.order-card {
+  border: none !important;
+  border-radius: 22px !important;
+  box-shadow: 0 12px 28px rgba(95, 61, 32, 0.08) !important;
+}
+
+.panel-header,
+.toolbar-card,
+.toolbar-meta,
+.toolbar-actions,
+.dish-main,
+.qty-control,
+.order-topline,
+.order-meta,
+.order-actions {
+  display: flex;
+  align-items: center;
+}
+
+.panel-header,
+.toolbar-card,
+.order-topline {
+  justify-content: space-between;
+}
+
+.menu-grid,
+.order-list {
+  display: grid;
+  gap: 16px;
+}
+
+.dish-main {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dish-main h2,
+.order-topline h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.dish-price,
+.order-id {
+  margin: 6px 0 0;
+  color: #9a5b28;
+  font-size: 14px;
+}
+
+.qty-control {
+  gap: 12px;
+}
+
+.qty-control strong {
+  min-width: 28px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sticky-footer {
+  position: fixed;
+  right: max(16px, calc((100vw - 720px) / 2 + 16px));
+  bottom: 16px;
+  left: max(16px, calc((100vw - 720px) / 2 + 16px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(123, 66, 25, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 251, 246, 0.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 38px rgba(83, 56, 33, 0.14);
+}
+
+.summary-block p,
+.summary-block strong {
+  margin: 0;
+}
+
+.summary-block p {
+  color: #7e644e;
+  font-size: 13px;
+}
+
+.summary-block strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 22px;
+}
+
+.submit-button {
+  min-width: 144px;
+}
+
+.toolbar-card {
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.toolbar-meta,
+.toolbar-actions,
+.order-meta {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order-meta {
+  justify-content: flex-end;
+  color: #7e644e;
+  font-size: 13px;
+}
+
+.item-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #fff7ee;
+}
+
+.order-actions {
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .menu-grid,
+  .order-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 16px 12px 110px;
+  }
+
+  .hero-card,
+  .sticky-footer,
+  .toolbar-card,
+  .dish-main,
+  .order-topline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card h1 {
+    font-size: 28px;
+  }
+
+  .qty-control,
+  .toolbar-actions,
+  .order-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .submit-button,
+  .toolbar-actions .el-button,
+  .order-actions .el-button {
+    width: 100%;
+  }
+
+  .order-meta {
+    justify-content: space-between;
+  }
+}
